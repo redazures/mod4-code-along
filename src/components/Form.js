@@ -10,19 +10,12 @@ class Form extends React.Component{
     change=(e)=>{
         console.log("changelog",e.target.value) // relative to e.target.name.value because we are not at the form level. we are at the bottom of the list.
         this.setState({[e.target.name]:e.target.value})
-        // if (e.target.name==="name") {
-        //     this.setState({name:e.target.value})
-        // } else {
-        //     this.setState({mod:e.target.value})
-        // }
     }
 
     render(){
         return(
-            <form onSubmit={(e)=>{
+            <form onSubmit={(e)=>{//console.log("submit this", e.target.name.value //console.log("this is submit handler",this.props)
                 e.preventDefault()
-                console.log("submit this", e.target.name.value)
-                console.log("this is submit handler",this.props)
                 this.props.submit({name: e.target[0].value})
                 this.setState({name:"",mod:""})
             }}>
