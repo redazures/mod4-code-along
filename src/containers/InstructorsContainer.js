@@ -5,6 +5,14 @@ import Search from '../components/Search.js'
 
 class InstructorContainer extends React.Component{
 
+    // componentDidMount(){
+    //     console.log("componennt did mount in container")
+    // }//after eveything is done, this will update and child mounts 7 times, this mounts, and then child mounts 1 more time
+
+    componentDidUpdate(){
+        console.log("componennt did update in container")
+    }//after eveything
+
     state={
         instructors:[{id:1,name:"Vincent",Mod:1},{id:2,name:"Jules",Mod: 2},{id:3,name:"Jimbo", Mod:1 },{id:4 , name: "Victor", Mod:3},{id:5, name:"KevX", Mod:4},{id:6,name:"Ian",Mod:6},{id:7,name:"YooJ",Mod:4}],
         filtered:[{id:1,name:"Vincent",Mod:1},{id:2,name:"Jules",Mod: 2},{id:3,name:"Jimbo", Mod:1 },{id:4 , name: "Victor", Mod:3},{id:5, name:"KevX", Mod:4},{id:6,name:"Ian",Mod:6},{id:7,name:"YooJ",Mod:4}],
