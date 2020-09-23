@@ -4,6 +4,9 @@ import './App.css';
 import Header from "./components/Header.js";
 import InstructorsContainer from "./containers/InstructorsContainer.js";
 import AnimeContainer from "./containers/AnimeContainer.js";
+import Welcome from "./components/Welcome.js";
+import {Route, Switch} from 'react-router-dom'
+
 
 
 class App extends React.Component{
@@ -19,9 +22,13 @@ class App extends React.Component{
     render(){
     return (
       <>
+      {/* <Route path='/welcome' render={()=><h1>Welcome to home town</h1>}/> */}
       <Header />
-      <InstructorsContainer appClickHandler={this.appClickHandler}/>
-      <AnimeContainer instructor={this.state.instructor}/>
+      <Switch>
+      <Route path='/welcome' render={()=><Welcome/>}/>
+      <Route path='/anime' render={()=><AnimeContainer instructor={this.state.instructor}/>}/>
+      <Route path='/instructors' exact render={()=><InstructorsContainer appClickHandler={this.appClickHandler}/>}/>
+      </Switch>
       </>
     );
   }

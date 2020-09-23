@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter} from "react-router-dom";
 
 // const lover_names=["Jenn","jimbo","Ian","Jules"]
 // let n = names.map(function(name){return <Bline name={name}/>})
 // console.log(n)
 
 ReactDOM.render(
- <React.StrictMode>
+ <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

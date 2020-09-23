@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 
 class Instructor extends React.Component{
@@ -7,20 +8,12 @@ class Instructor extends React.Component{
         this.props.appClickHandler(this.props.inst)
     }
 
-    // componentDidUpate(){
-    //     console.log("c did cmount in Child")
-    // } this update 7 times and then contrainer 1 and this 1 more time
-
-    componentDidUpate(){
-        console.log("child did updated in Child")
-    }
-
-    componentWillUnmount(){
-        console.log("unmount in instructir")
-    }
-
     render(){
-        return <p onClick={this.instructorClickHandler}>{this.props.inst.name}</p>
+        return (
+        <NavLink to={`/instructors${this.props.inst.id}`}>
+        <p onClick={this.instructorClickHandler}>{this.props.inst.name}</p>
+        </NavLink>
+        )
     }
 }
 
